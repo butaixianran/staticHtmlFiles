@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>html5视频播放</title>
-  <script src="https://dn-cdnjsnet.qbox.me/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
     <div style="padding:6px;margin:6px">
@@ -18,23 +17,22 @@
   
   
   <script>
-   //$(function(){
-    $("#btn").click(function(){
-        var file = $("#file").val();
+
+   document.getElementById("btn").addEventListener( "click", function(){
+        var file = document.getElementById("file").value;
         console.log(file);
-        var video = $("#my-video");
-        $("#my-video").attr("src", file);
+        var video = document.getElementById("my-video");
+        video.setAttribute("src", file);
         video.load();
-      $("#msg").html("大文件视频会缓冲较久，稍候会自动播放");
+        document.getElementById("msg").innerHTML = "大文件视频会缓冲较久，稍候会自动播放";
       document.getElementById("know").style.display = "inline-block";
-    });
-     
-    $("#know").click(function(){
-      $("#msg").html("");
-      document.getElementById("know").style.display = "none";
-    });
-     
-   //});
+   }, false );
+
+   document.getElementById("know").addEventListener( "click", function(){
+        document.getElementById("msg").innerHTML = "";
+        document.getElementById("know").style.display = "none";
+   }, false );
+
   </script>
 
   
